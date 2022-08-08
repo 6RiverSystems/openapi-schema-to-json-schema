@@ -64,15 +64,14 @@ workflows:
   test-deploy:
     jobs:
       - setup
-          context: 6rs-public-npm
-          requires:
-            - setup
       - lint:
           context: 6rs-public-npm
           requires:
             - setup
       - test:
           context: 6rs-public-npm
+          requires:
+            - setup
       - publish:
           context: 6rs-public-npm
           requires:
