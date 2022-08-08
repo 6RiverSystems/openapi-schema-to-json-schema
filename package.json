@@ -1,5 +1,5 @@
 {
-  "name": "@openapi-contrib/openapi-schema-to-json-schema",
+  "name": "@6river/openapi-schema-to-json-schema",
   "version": "0.0.0-development",
   "description": "Converts OpenAPI Schema Object to JSON Schema",
   "main": "index.js",
