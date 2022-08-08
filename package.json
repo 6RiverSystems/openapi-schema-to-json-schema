@@ -1,6 +1,10 @@
 {
   "name": "@6river/openapi-schema-to-json-schema",
   "private": false,
+  "publishConfig": {
+    "access": "public",
+    "registry": "https://registry.npmjs.org/"
+  },
   "version": "0.0.0-development",
   "description": "Converts OpenAPI Schema Object to JSON Schema",
   "main": "index.js",
