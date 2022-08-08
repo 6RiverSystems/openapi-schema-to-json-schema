@@ -23,34 +23,17 @@ jobs:
       - attach_workspace:
           at: ./
       - run:
-          name: check format
-          command: npm run format:check
-      - run:
           name: Lint
-          command: npm run eslint:check -- --format junit --output-file ./reports/eslint/results.xml
-      - store_test_results:
-          path: ./reports
-      - store_artifacts:
-          path: ./reports
+          command: npm run lint
   test:
     docker:
       - image: cimg/node:14.17.6
-    environment:
-      MOCHA_OPTS: --reporter mocha-junit-reporter --reporter-options mochaFile=./reports/junit/mocha/mocha.xml
     steps:
       - attach_workspace:
           at: ./
       - run:
           name: Unit Tests
-          command: npm run only:test
-      - run:
-          name: Coverage
-          command: npm run only:lCov
-      - sixrs-gke/codecov
-      - store_test_results:
-          path: ./reports
-      - store_artifacts:
-          path: ./reports
+          command: npm run test
   publish:
     docker:
       - image: cimg/node:14.17.6
